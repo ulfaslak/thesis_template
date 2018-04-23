@@ -1,0 +1,29 @@
+Enrichment methods for continuous and categorical variables, as described in Section \ref{subsubsec:ParTIptTwo}, and Pearson product-moment correlation are applied.
+Table \ref{tab:facetsValuesAttributesTable} gives a qualitative summary of all enrichments as they are presented in Appendices \ref{app:questionnaireEnrichmentTable}-\ref{app:behaviorCorrelationTable}.
+Figure \ref{fig:firstEnrichmentsQuestionnaireValues} visualizes the strongest enrichments of QIs and BHVs, as well as enrichment of professional disciplines for each archetype, to give the reader an intuition of the method.
+Because both enrichment and correlation methods uses \textit{distance} from archetype as the independent variable, negative slopes signify enrichment and positive slope signifies depletion.
+Error bars have been omitted because they vanish due to the large sample sized, however SDs are typical in the order of a quarter of the second axis range which is not insignificant to the later interpretation of the enrichments.
+All presented enrichments and correlations in Table \ref{tab:facetsValuesAttributesTable} and Figure \ref{fig:firstEnrichmentsQuestionnaireValues} are significant after Bonferroni and Benjamin-Hochberg corrections, respectively, for a significance level of 0.05.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/firstEnrichmentsQuestionnaireValues}
+	\caption{\label{fig:firstEnrichmentsQuestionnaireValues} Enrichments for each archetype. \textbf{a-b)} are single strongest enrichments of questionnaire items ({\color{blue}blue}) and Basic Human Values ({\color{red}red}). \textbf{c)} are enrichments of professional disciplines. First axes are bin-distances from archetype and second axes for a-b) are average item response values rescaled from [1 ; 5] to [-1 ; 1] and normalized frequency for c). 'slo' is the slope of a first order approximation of the curve, so \textbf{negative slope is enrichment and positive slope is depletion}.}
+\end{figure}
+
+\begin{sidewaystable}
+	\input{includes/results/tables/facetsValuesAttributesTable}
+	\caption{\label{tab:facetsValuesAttributesTable}Summary table of the strongest significant enrichments for facets, Basic Human Values, demographic attributes and mobile behaviors for each archetype. Considering the rows one by one there are clear differences between the archetypes. Facets, values and behaviors are sorted by descending enrichment/correlation strength. The following words are shortened: sci[ence], tech[nology], eng[ineering], lit[erature], lang[uage], edu[cation] and med[icine]. '-' symbolizes no significant enrichments. Facets are single-word descriptions of longer questionnaire items (see Appendix \ref{app:questionnaireEnrichmentTable}). Demographic attributes strongly influenced by age, such as education level and marital status, are omitted due to the strong age differences between archetypes.}
+\end{sidewaystable}
+
+Two datasets provide facets, values and attributes and one provides behavior.
+The SAPA-project dataset is analyzed for facets and demographic attributes.
+It comprises personality test responses from a large number of Internet users, as well as demographic information such as age, gender, country, education and marital status.
+This provides a unique opportunity to study how personality - or in this paradigm, distance to an archetype - links to demographic attributes.
+Furthermore the property that the SAPA collection method asks respondents questions from multiple inventories is taken advantage of.
+When analyzing enrichment of QIs care has been taken to avoid "circular enrichment" since distance is measured in units of BFTs and BFTs are composed of QIs.
+By analyzing enrichment of QIs from the SPI inventory for individuals close to each archetype, where distance is measured using BFT values computed from the IPIP100 inventory, circularity is mitigated. 
+
+The \textit{myPersonality} Facebook dataset is analyzed for values.
+The SensibleDTU dataset is analyzed for behaviors.
+Raw data is recombined into 38 behavioral indicators for 412 study participants, using an - for the purpose of this study - extended version of the behavioral feature extraction Python software \textit{bandicoot}. The indicators can be viewed in Appendix \ref{app:fullListOfExtractedFeatures}, and the implementation pipeline is presented in Section \ref{subsubsec:featureEngineering}.

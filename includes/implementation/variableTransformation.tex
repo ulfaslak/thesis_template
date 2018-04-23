@@ -1,0 +1,11 @@
+Two steps of variable transformation is employed:
+\begin{enumerate}
+	\item Domain scaling
+	\item Form transformation
+\end{enumerate}
+
+\textbf{For (1):}
+The indicators that the extended version of bandicoot returns are scaled in different domains. Most of them either return ratios or count variables, which can be problematic to analysis methods that are not scaling invariant. To correct for this, the data are structured as a matrix with rows for users and columns for indicators, and the columns are subtracted by their means and divided by their standard deviations such as to enforce zero mean and unit standard deviation for all columns. The same approach is taken for the BF data (but not the distances from consensus archetypes, as this would produce negative distance which confuses the analysis).
+
+\textbf{For (2):}
+Some indicators are not normally distributed which can cause problems in analysis because a density shift to one end of the domain can make trends in the data arise although there is none. In most cases, generally, and for all cases in this study, variables that are not normally distributed can be transformed using a scaling function like the logarithmic, square root, square, inverse, etc.. Out of the 38 behavioral indicators used in this study 12 were log-transformed.

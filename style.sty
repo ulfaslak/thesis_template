@@ -1,0 +1,228 @@
+% PDF metadata and hyperlinks
+\usepackage[dvips]{graphicx}
+\usepackage{color}
+
+% Bold math symbols in section titles
+\makeatletter
+    \DeclareRobustCommand*{\bfseries}{%
+        \not@math@alphabet\bfseries\mathbf
+        \fontseries\bfdefault\selectfont
+        \boldmath
+    }
+\makeatother
+
+% Allow multiline comment environment
+\usepackage{verbatim}
+
+% All sorts of symbols
+\usepackage{pifont}
+
+% Colored text
+\usepackage{color}
+
+% bibtex style
+\bibliographystyle{unsrt}
+
+% cite package
+\usepackage{cite}
+
+% raised citations with \mcite{} instead of \cite{}
+\newcommand\mcite[1]{%
+    \raisebox{0pt}[0.8\height][\depth]{\ensuremath{^\text{\cite{#1}}}}}
+    
+% floats beside figures
+\usepackage{float}
+\usepackage{nomencl}
+\usepackage{textcomp}
+\usepackage{stackrel}
+\usepackage{sidecap}
+
+% To write values with units
+\usepackage{siunitx}
+
+% maths
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{bm}
+
+% For number precision
+\usepackage{numprint}
+
+% For allowing itemize without bullets
+\usepackage{enumitem}
+
+% For typesetting a/b properly. 
+\usepackage{nicefrac}
+
+% italic figure captions
+\usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
+
+% wrapfigs
+\usepackage{wrapfig}
+
+
+% bold typewriter font
+\usepackage[T1]{fontenc}
+\usepackage{libertine}%% Only as example for the romans/sans fonts
+\usepackage[scaled=0.85]{beramono}
+
+% Custom Commands
+\newcommand{\re}[1]{(\ref{eq:#1})}
+\newcommand{\np}{\newline \newline } % New paragraph
+\newcommand{\stoe}{\, \textrm{\textendash} \,}
+\newcommand{\eqsep}{\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,}
+
+% Custom acronyms
+\usepackage{xspace}
+
+\newcommand{\achiever}{\textit{self-concern}\xspace}
+\newcommand{\host}{\textit{social achievement}\xspace}
+\newcommand{\wildcard}{\textit{reciprocal altruism}\xspace}
+\newcommand{\loyalist}{\textit{xenophobia-loyalism}\xspace}
+\newcommand{\hippie}{\textit{freeriding}\xspace}
+\newcommand{\follower}{\textit{withdrawal}\xspace}
+\newcommand{\smallachiever}{\textit{self-concern}\xspace}
+\newcommand{\smallhost}{\textit{social achievement}\xspace}
+\newcommand{\smallwildcard}{\textit{reciprocal altruism}\xspace}
+\newcommand{\smallloyalist}{\textit{xenophobia-loyalism}\xspace}
+\newcommand{\smallhippie}{\textit{freeriding}\xspace}
+\newcommand{\smallfollower}{\textit{withdrawal}\xspace}
+\newcommand{\OPE}{O\xspace}
+\newcommand{\CON}{C\xspace}
+\newcommand{\EXT}{E\xspace}
+\newcommand{\AGR}{A\xspace}
+\newcommand{\NEU}{N\xspace}
+
+% block indent paragraphs
+\usepackage{scrextend}
+
+% For give equation-referencer som ({section-number},{equation-number})
+\numberwithin{equation}{section}
+\numberwithin{table}{section}
+
+% Custom caption commmand
+\newcommand{\mycaption}[1]{\caption{\small{#1}}}
+
+% For abbreviations
+\usepackage{nomencl}
+\makenomenclature
+\renewcommand{\nomname}{List of Abbreviations} 
+\setlength{\nomlabelwidth}{.45\hsize} %%% Length of each label, see the manual. 
+
+% Remove paragraph ugly indents
+%\usepackage{parskip}
+
+% Clever references
+\usepackage{cleveref}
+\usepackage{mathrsfs}
+
+% Special symbols up for changing
+\newcommand{\matr}[1]{\bm{#1}}
+\newcommand{\invis}{ {\color{white}\frac{_A}{_f}}  } % Invisible element for equation height
+\newcommand{\nbar}{\,\mathbf{n}}
+\newcommand\T{\rule{0pt}{2.6ex}}
+\newcommand\B{\rule[-1.5ex]{0pt}{0pt}}
+\newcommand{\intToInt}{\,\textendash\,}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\newcommand{\secU}{Sec.\,\,}
+\newcommand{\secM}{Secs.\,\,}
+\newcommand{\appU}{Appendix\,\,}
+\newcommand{\appM}{appendices\;}
+\newcommand{\eqU}{Eq.\,\,}
+\newcommand{\eqM}{Eqs.\,\,}
+\newcommand{\listU}{Listing\,\,}
+\newcommand{\listM}{Listings\,\,}
+\newcommand{\tabU}{Table\,\,}
+\newcommand{\tabM}{Tables\,\,}
+
+% Set double spacing
+\usepackage{setspace}
+\newcommand{\defaultSpacing}{\onehalfspacing}
+\defaultSpacing
+\newcommand{\smallSpacing}{\singlespacing}
+
+% Change page shape
+\usepackage{changepage}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+\lhead{\thepage}
+\rhead{\nouppercase{\rightmark}}
+\cfoot{}
+
+% Newline after paragraphs
+\makeatletter
+\renewcommand\paragraph{%
+   \@startsection{paragraph}{4}{0mm}%
+      {-\baselineskip}%
+      {.5\baselineskip}%
+      {\normalfont\normalsize\bfseries}}
+\makeatother
+
+% Code
+\usepackage{listings}
+\usepackage{courier}
+\lstset{
+     basicstyle=\footnotesize\ttfamily,
+     numbers=left,               
+     numberstyle=\tiny,          
+     %stepnumber=2,               
+     numbersep=5pt,              
+     tabsize=2,                  
+     extendedchars=true,         
+     breaklines=false,            
+     keywordstyle=\color{red},
+		frame=b,         
+%        keywordstyle=[1]\textbf,    
+%        keywordstyle=[2]\textbf,    
+%        keywordstyle=[3]\textbf,    
+%        keywordstyle=[4]\textbf,   \sqrt{\sqrt{}} 
+     stringstyle=\color{white}\ttfamily, 
+     showspaces=false,           
+     showtabs=false,             
+     xleftmargin=17pt,
+     framexleftmargin=17pt,
+     framexrightmargin=5pt,
+     framexbottommargin=4pt,
+     escapeinside={@}{@},
+     aboveskip={0.01\baselineskip},
+     %backgroundcolor=\color{lightgray},
+     showstringspaces=false     
+}
+
+\lstloadlanguages{Python}
+	\lstset{language=Python,tabsize=4}
+
+\usepackage{caption}
+
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\DeclareCaptionLabelFormat{listing}{\bothIfFirst{#1}{ }\thesection.#2}
+\captionsetup[lstlisting]{format=listing,labelformat=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+\usepackage{longtable}
+\usepackage[final]{pdfpages}
+\usepackage{appendix}
+
+%sidewaystables
+\usepackage{rotating}
+
+% quotes
+\usepackage{csquotes}
+\usepackage{dirtytalk}
+\usepackage{epigraph}
+\setlength\epigraphwidth{8cm}
+\setlength\epigraphrule{0pt}
+\usepackage{etoolbox}
+
+% tables
+\usepackage{booktabs,calc,multirow}
+\newlength\wdx% for vertical alignment
+\setlength{\wdx}{\widthof{66}}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}

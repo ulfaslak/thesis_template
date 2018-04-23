@@ -1,0 +1,18 @@
+Rooted in the notion from evolutionary psychology that personality is an adapted behavioral strategy, the goal of thesis was to discover these strategies using the Pareto Task Inference paradigm. In the process of conducting this project a number of conclusions were drawn. Each is presented below.
+
+\begin{itemize}
+	\item Simulation examples revealed the search for more than six archetypes computationally unfeasible unless a very large number of datapoints is available. This was further exemplified by illustrating that points on the convex hull of a data cluster are not contained within the Pareto front. While this constitutes an upper limit to the number of archetypes, it was argued that for Big Five personality data in five dimensions, the lower bound on number of archetypes should also be six.
+	\item Using the same approach for computing archetypes in seven different datasets, six very similar personality archetypes emerged. The most deviating traits were taken to be "not in consensus" meaning they were left variable such that computing distance to the archetypes would disregard non-consensus trait.
+	\item Archetypes were found to influence different variables to become enriched or depleted near them. Similarly many behavioral indicators measured through personal smartphones and computed using an extended version of the \textit{bandicoot} software were found to correlate both positively and negatively with distance from archetypes.
+	\item Six evolutionary behavioral strategies were suggested for the archetypes based on enrichments correlations. By reviewing the literature, four were to correspond to speculated strategies known to evolutionary psychologists already. This implies that: (1) the Big Five model is in fact an evolutionarily plausible way of carving up personality as argued by Buss\mcite{buss1991evolutionary, larsen2008personality}, and (2) two strategies \achiever and \host which are not accounted for in the literature may be a discovery that can lead to a better understanding of personality as behavioral strategy.
+	\item There are significant age differences between behavioral strategies, indicating that humans adopt different strategies over the course of a lifetime.
+	\item An individuals' distance to the inferred archetypes can be predicted with greater accuracy than its BF trait values and questionnaire item principal component values. Whether this points to something "special" is discussed, yet remained unanswered and requires more analysis.
+	\item Principle components of personality questionnaire items provide a better prediction target indicating that strategies may belong in a PC-basis space rather than a BF-basis space.
+\end{itemize}
+
+Furthermore, the project yielded the following general value propositions.
+
+\begin{itemize}
+	\item An extended version of the \textit{bandicoot} behavioral indicator software for Python which can readily be applied by other researchers with access to the SensibleDTU dataset, to compute out-of-the-box measures of behavior.
+	\item A fast Python implementation of the AA algorithm developed by M\o rup et. al.\mcite{morup2012archetypal}, which is made available on PyPi\mcite{pypcha} and can be installed in any Python environment using the \textit{pip} package manager with the following command: \texttt{pip install py\_pcha}.
+\end{itemize}

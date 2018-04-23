@@ -1,0 +1,348 @@
+\documentclass[a4paper]{article}
+
+% Setup pdf creation
+\usepackage[pdftex,bookmarks=true,pdfpagemode=UseOutlines,pdfborder={0 0 0},bookmarksopen=true]{hyperref}
+\hypersetup{pdftitle={Master Thesis, Ulf Aslak}}
+
+% Everything Non-content is put in style.sty
+\usepackage{style}
+
+% Uncomment and fill in if you want default front page
+% \title{Personality archetypes reveal evolutionarily important behavioral strategies} 
+% \author{Ulf Aslak}
+
+
+\begin{document}
+
+
+% Frontpage (custom)
+% ------------------
+\includepdf{figures/frontpage}
+
+
+% % Frontpage (default)
+% ------------------
+% \maketitle 
+% \mbox{}
+% \thispagestyle{empty}
+% \newpage
+
+
+% Preface
+% -------
+\pagenumbering{roman}
+\section*{Preface}
+\addcontentsline{toc}{section}{Preface}
+\input{includes/preface}
+\newpage
+
+
+% Abstract
+% --------
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+\input{includes/abstract}
+\newpage
+
+
+% Resume
+% ------
+\section*{Resume}
+\addcontentsline{toc}{section}{Resume}
+\input{includes/resume}
+\newpage
+
+
+% Table of contents
+% -----------------
+\begin{spacing}{1.22}
+	\begin{adjustwidth}{-1cm}{-1cm}
+		\setcounter{tocdepth}{4}
+		\thispagestyle{plain}
+		\renewcommand\contentsname{Table of Contents}
+		\tableofcontents
+		\newpage
+	\end{adjustwidth}
+\end{spacing}
+
+
+% % Nomenclature
+% % ------------
+% \begin{spacing}{1.41}
+
+% 	% Abbreviations
+% 	\section*{List of Abbreviations}
+% 	\addcontentsline{toc}{section}{List of Abbreviations}
+% 	\thispagestyle{plain}
+% 	\input{includes/abbreviations}
+% 	\newpage
+
+% 	% Symbols
+% 	\setcounter{secnumdepth}{0}
+% 	\section{List of Symbols}
+% 	\thispagestyle{plain}
+% 	\input{includes/nomenclature}
+% 	\newpage
+
+% 	% Glossary
+% 	\setcounter{secnumdepth}{0}
+% 	\section{Glossary}
+% 	\thispagestyle{plain}
+% 	\input{includes/glossary}
+% 	\newpage
+
+% \end{spacing}
+
+\mbox{}
+\thispagestyle{empty}
+\newpage
+\setcounter{secnumdepth}{4}
+
+
+% Introduction
+% ------------
+\section{Introduction \label{sec:theoryIntroduction}}
+\thispagestyle{plain}
+\pagenumbering{arabic}
+\input{includes/introduction}
+\newpage 
+
+
+% Background Theory
+% ------------------
+\section{Background Theory \label{sec:backgroundTheory}}
+\input{includes/theory/theory}
+\thispagestyle{plain}
+
+	% Topics in Psychology
+	\subsection{Evolutionary Psychology \label{subsec:evolutionaryPsychology}}
+	\input{includes/theory/evolutionaryPsychology}
+
+		% What is personality?
+		\subsubsection{What is personality and how does it relate to behavior? \label{subsubsec:behaviorAndPersonality}}
+		\input{includes/theory/behaviorAndPersonality}
+
+		% How is personality measured?
+		\subsubsection{How is personality measured? \label{subsubsec:dimensionsOfPersonality}}
+		\input{includes/theory/dimensionsOfPersonality}
+
+		\subsubsection{How does evolutionary psychology treat personality? \label{subsubsec:individualDifferencesAndPersonality}}
+		\input{includes/theory/individualDifferencesAndPersonality}
+
+	% Pareto Task Inference
+	\newpage
+	\subsection{Pareto Task Inference \label{subsec:paretoTaskInference}}
+	\input{includes/theory/paretoTaskInference}
+
+		% Finding archetypes in trait-space
+		\subsubsection{Finding traits that are optimized for objectives \label{subsubsec:ParTIptOne}}
+		\input{includes/theory/ParTIptOne}
+
+		% Inferring objectives from enrichment near archetypes
+		\subsubsection{Inferring objectives from enrichment near archetypes \label{subsubsec:ParTIptTwo}}
+		\input{includes/theory/ParTIptTwo}
+
+		% Archetypal Analysis
+		\subsubsection{Inferrence of archetypes \label{subsubsec:archetypalAnalysis}}
+		\input{includes/theory/archetypalAnalysis}
+
+\newpage
+\setcounter{figure}{0}
+\thispagestyle{plain}
+
+
+% Dataset
+% -------
+\section{Datasets \label{sec:datasets}}
+\input{includes/datasets/datasets}
+
+	% Sensible DTU
+	\subsection{Sensible DTU \label{subsec:sensibleDTU}}
+	\input{includes/datasets/sensibleDTU}
+
+	% myPersonality
+	\subsection{myPersonality \label{subsec:facebook}}
+	\input{includes/datasets/facebook}
+
+	% MIDUS
+	\subsection{Midlife Development in the U.S \label{subsec:MIDUS}}
+	\input{includes/datasets/MIDUS}
+
+	% SAPA
+	\subsection{SAPA-Project \label{subsec:SAPA}}
+	\input{includes/datasets/SAPA}
+
+\newpage
+\setcounter{figure}{0}
+\thispagestyle{plain}
+
+
+% Results
+% -------
+\section{Analysis and Results\label{sec:results}}
+\input{includes/results/results}
+
+	% Consensus Archetypes
+	\subsection{Six consensus archetypes emerge across seven datasets \label{subsec:consensusArchetypes}}
+	\input{includes/results/consensusArchetypes_alt}
+
+	% Enrichment
+	\subsection{Enrichment and correlation reveal distinct strategies\label{subsec:enrichment}}
+	\input{includes/results/enrichment}
+
+		% Analysis and data
+		\subsubsection{Analysis and data \label{subsubsec:analysisAndData}}
+		\input{includes/results/analysisAndData}
+
+		\subsubsection{Summary and strategy suggestions \label{subsubsec:summary}}
+		\input{includes/results/summary}
+
+	% Supervised Learning
+	\newpage
+	\subsection{Archetypes separate data better than traits \label{subsec:classification}}
+	\input{includes/results/classification}
+
+\newpage
+\setcounter{figure}{0}
+\thispagestyle{plain}
+
+
+% Discussion
+% ----------
+\newpage
+\section{Discussion \label{sec:discussion}}
+\input{includes/discussion}
+
+% Conclusions
+\newpage
+\section{Conclusions \label{sec:conclusions}}
+\input{includes/conclusions}
+
+	% Future Research
+	\subsection{Future Research \label{subsec:futureResearch}}
+	\input{includes/futureResearch}
+
+\newpage
+\setcounter{figure}{0}
+\thispagestyle{plain}
+
+
+% Methods
+% -------
+\section{Methods\label{sec:methods}}
+\input{includes/implementation/methods}
+
+	% Pre-processing
+	\subsection{SensibleDTU data pre-processing \label{subsec:behavioralDataPreprocessing}}
+	\input{includes/implementation/behavioralDataPreprocessing}
+
+		% Feature Engineering
+		\subsubsection{Feature Engineering \label{subsubsec:featureEngineering}}
+		\input{includes/implementation/featureEngineering}
+
+		% Variable Transformation
+		\subsubsection{Variable Transformation \label{subsubsec:variableTransformation}}
+		\input{includes/implementation/variableTransformation}
+
+		% Outlier Detection
+		\subsubsection{Outlier Detection \label{subsubsec:outlierDetection}}
+		\input{includes/implementation/outlierDetection}
+
+		% Extracting personality data
+		\subsubsection{Personality Data Extraction \label{subsubsec:extractingPersonalityData}}
+		\input{includes/implementation/extractingPersonalityData}
+
+	% Analysis
+	\subsection{Analysis \label{subsec:methods:analysis}}
+	\input{includes/implementation/analysis}
+
+		% Computing consensus archetypes
+		\subsubsection{Computing consensus archetypes \label{subsec:computingConsensusArchetypes}}
+		\input{includes/implementation/computingConsensusArchetypes}
+
+		% Computing enrichments
+		\subsubsection{Computing enrichments \label{subsec:enrichment}}
+		\input{includes/implementation/enrichment}
+
+		% Computing correlations
+		\subsubsection{Computing correlations \label{subsec:correlations}}
+		\input{includes/implementation/correlations}
+
+		% Classification
+		\subsubsection{Classification \label{subsec:classification}}
+		\input{includes/implementation/classification}
+
+
+% References
+% ----------
+\newpage
+\thispagestyle{plain}
+\addcontentsline{toc}{section}{References}
+\bibliography{includes/bib}
+
+
+% Appendices
+% ----------
+\appendix
+\newpage
+\appendixpage
+
+\noappendicestocpagenum
+\addappheadtotoc
+
+% Full List of Extracted Indicators
+\section{Full List of Extracted Indicators \label{app:fullListOfExtractedFeatures}}
+\thispagestyle{plain}
+\input{includes/appendix/fullListOfExtractedFeatures}
+\newpage
+
+% A Note on Feature Engineering
+\section{A Note on Feature Engineering \label{app:aNoteOnFeatureEngineering}}
+\thispagestyle{plain}
+\input{includes/appendix/aNoteOnFeatureEngineering}
+\newpage
+
+% Questionnaire Enrichment Table
+\section{Questionnaire Enrichment Table \label{app:questionnaireEnrichmentTable}}
+\thispagestyle{plain}
+\input{includes/appendix/questionnaireEnrichmentTable}
+\newpage
+
+% Basic Human Values Enrichment Table
+\section{Basic Human Values Enrichment Table \label{app:valuesEnrichmentTable}}
+\thispagestyle{plain}
+\input{includes/appendix/valuesEnrichmentTable}
+\newpage
+
+% Behavior Correlation Table
+\section{Behavior Correlation Table \label{app:behaviorCorrelationTable}}
+\thispagestyle{plain}
+\input{includes/appendix/behaviorCorrelationTable}
+\newpage
+
+% Theory of Basic Human Values
+\section{Theory of Basic Human Values \label{app:theoryOfBasicHumanValues}}
+\thispagestyle{plain}
+\input{includes/appendix/theoryOfBasicHumanValues}
+\newpage
+
+% Distributions of Big Five datasets
+\section{Distributions of Big Five datasets \label{app:BFdist}}
+\thispagestyle{plain}
+\input{includes/appendix/BFdist}
+\newpage
+
+% Code for enrichment of feautres near archetypes
+\section{Code for enrichment of feautres near archetypes \label{app:enrichment_code}}
+\thispagestyle{plain}
+\input{includes/appendix/enrichment_code}
+\newpage
+
+% Online
+\section{Online \label{app:onlineAppendix1}}
+\thispagestyle{plain}
+\input{includes/appendix/onlineAppendix1}
+\newpage
+
+\end{document}
+

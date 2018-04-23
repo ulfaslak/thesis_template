@@ -1,0 +1,71 @@
+From one perspective humans are all the same.
+We think with our brains and act with our bodies, feel sadness and share laughter.
+Yet we are also different from each other.
+No two people are exactly the same, and even for identical twins the firstborn will always be the firstborn and will never know what it's like to be the secondborn.
+Somewhere between our common humanity and individual differences lies \textit{personality}.
+We are all variations of the same basic template, and personality captures those differences: how our shared human nature can manifest itself in different behaviors, feelings and ways of thinking.
+
+\textbf{Personality can be measured}.
+Throughout the 20th century, many have concerned themselves with understanding and quantifying personality.
+Rooted in the assumption that personality attributes that are truly important should manifest themselves in language\mcite{galton1949measurement}, various systems for measuring personality using questionnaire methods have been developed.
+Models like the \textit{Big Five}, the \textit{16PF} and the \textit{Eysenck} model score personality along dimensions such as \textit{extraversion} and \textit{neurotiscm} and are well established and widely applied.
+The Big Five model especially provides an effective and intuitive framework and is generally recognized as the gold standard instrument of measurement\mcite{workman2014evolutionary}.
+It measures personality along five nearly orthogonal dimensions called \textit{traits} which are \textit{openness to experience}, \textit{conscientiousness}, \textit{extraversion}, \textit{agreeableness} and \textit{neuroticism}.
+It is argued to represent the most evolutionarily plausible way of representing human personality, due to the property that its traits are nearly independent\mcite{buss1991evolutionary, larsen2008personality}.
+
+\textbf{Personality can be viewed as behavioral strategy}.
+Past studies in evolutionary biology did not recognize personality as important to an organism's ability to propagate its genes, i.e. its \textit{fitness}, because other factors like physical attributes were considered far more important.
+Recent findings from twin-studies have, however, shown that personality is $30-50\%$ inherited suggesting that there are fitness benefits to different genetically inheritable aspects of personality\mcite{newman1998individual, THG:8492454}.
+This finding, joined with the observation that personality differs between people, has roused significant interest in the emerging field of evolutionary psychology (EP).
+EP established the following notion: if a human has to perform a certain set of tasks to propagate its genes - such as self-protection, status affirmation and mate acquisition - and these tasks can be performed, from an evolutionary perspective, equally well in a multitude of ways, the personality held by an individual is its adopted strategy for performing these tasks\mcite{workman2014evolutionary}.
+Hereinafter 'personality' and 'strategy' will be used interchangeably.
+
+\textbf{Frequency dependence causes individual personality differences}.
+Evolutionary psychologists argue that variation in personality between individuals arise because there is no single optimal strategy for performing life's many tasks\mcite{workman2014evolutionary}.
+In fact there are many, which causes people's personalities to vary greatly.
+This argument is best presented using an example.
+A fundamental strategy to cope with life's tasks could be to rely on trust and benevolence to establish a network to rely on, conform with society's rules and opt for stability over risk. 
+Another fundamental strategy might then be to take advantage of people's weaknesses, lie to get ahead and trust no one.
+If everyone adopted the first strategy it would be too easy to succeed using the second, and if everyone adopted the second there would be no one for the second to take advantage of.
+The fitness associated with each strategy is therefore \textit{frequency dependent}, which drives constant fluctuations in fitness as the frequency of each changes.
+Furthermore, because these fluctuations occur asynchronously across local environments, variation will be perpetuated globally.
+
+\textbf{Individual personality is a trade-off between fundamental strategies}.
+To fully adopt one fundamental strategy is rarely a robust solution due to the fitness fluctuations that result from frequency dependence.
+An individual will therefore tend to adopt a strategy that is a mix of many fundamental strategies.
+This can be thought of as a multi-objective optimization problem: individuals must ensure maximal fitness but personal strategies must obey inherent trade-offs between performance of fundamental strategies.
+It confines solutions to a surface in performance space called the \textit{Pareto front}.
+The Pareto front defines the boundary where increasing performance in one strategy comes at the expense of performance in others.
+Evolution tends to not allow individuals to stay off the Pareto front because their fitness advantage would be inferior to those on it, and as such personalities of people should be confined to the Pareto front where they remain \textit{Pareto optimal} trade-offs between fundamental strategies.
+
+\textbf{Fundamental personality strategies can be inferred from archetypes}.
+Recent theoretical advances due to Uri Alon et. al. enable the inference of evolutionary biological objectives subject to performance trade-offs\mcite{shoval2012evolutionary, hart2015inferring}.
+The Pareto Task Inference (ParTI) principle developed by Alon et. al. establishes that for a representatively large population of individuals, the distribution of points in trait-space will fall on a simplex (a polytope of $d_{dimensions}+1$ vertices that evaluates to a triangle in 2D, a tetrahedron in 3D, a 4-simplex in 4D, etc.) either in the original trait-space or in a lower-dimensional subspace spanned by the first principle components.
+The vertices of this simplex are \textit{archetypes} and each represents a combination of traits that are suited for a specific objective.
+Depending on the system that is analyzed the objectives that are inferred can be single tasks such as nut cracking or branch grasping in the case of Darwinian finches, or something more complex like personality strategies which are optimized to solve multiple tasks in different ways in the case of humans.
+The ParTI principle has proven successful in explaining functions of cancer cells\mcite{hart2015inferring}, morphology of ammonite shells\mcite{tendler2015evolutionary}, mass and longevity design of mammals\mcite{szekely2015mass}, and more\mcite{korem2015geometry, shoval2012evolutionary}.\\
+
+\textbf{This study sets out to infer fundamental personality strategies}.
+In the established context there is a gap in our knowledge about fundamental personality strategies.
+Given the ready availability of instruments to measure personality, a whole field of theory which treats personality as behavioral strategy, and a proven theoretical principle for inferring evolutionary objectives from traits there is strong motivation to pursue an understanding of fundamental personality strategies.\\
+
+The research project documented here is novel and ongoing, and as such this thesis presents the trajectory of first exploration with strong emphasis on outlook.
+The research idea is due to Hila Sheftel, Uri Alon and Ulf Aslak.
+In brief, the reader will be presented with the following narrative:
+Six personality archetypes are found across a multitude of independent Big Five datasets using the ParTI principle.
+By studying how different personal attributes and questionnaire items have higher/lower means or are in over/under-representation for individuals near each archetype (i.e. are \textit{enriched}/\textit{depleted}) and how certain types of behavior correlate with distance from archetypes, an understanding of possible strategies for each archetype emerges.
+For this purpose the book \textit{Evolutionary Psychology} (2014) by Workman et. al.\mcite{workman2014evolutionary} is used as a literary reference framework for establishing sound arguments for which scientifically investigated evolutionary strategies that the archetypes may correspond to.
+To infer the viability of the archetypes a supervised machine learning approach is taken to infer the predictive power between behavior and distance from the archetypes, as compared to Big Five traits as well as principle components of questionnaire items.
+The result of this analysis gives a preliminary picture of what the landscape of fundamental personality strategies looks like.
+Since the discoveries are of sensitive nature, due discussion is made to clarify doubts about their implications.
+Furthermore, results relating to race and gender are omitted for moral reasons.
+
+%The reader is first presented with a short literature overview in Section \ref{sec:literatureOverview}.
+The relevant theory is presented in Section \ref{sec:backgroundTheory} which primarily treats personality psychology, EP and ParTI.
+% a brief introduction to supervised machine learning that supports the most important terms and methods used in the analysis.
+Section \ref{sec:datasets} describes the datasets used for analysis.
+Section \ref{sec:results}, which is the main section, presents the conducted research.
+It reads like an investigative research story separated into shorter subsections that each has a single premise.
+Section \ref{sec:discussion} discusses the results, their uncertainties and limitations, implications and impact.
+Section \ref{sec:conclusions} sums up the outcomes of the study in a list of conclusions, and gives an outlook on future directions for the project.
+The methods are presented last in Section \ref{sec:methods} as supporting information and serves as reference to consult for clarification on aspects of the analysis, and provides necessary information to allow for future reproducibility.

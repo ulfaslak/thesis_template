@@ -1,0 +1,9 @@
+For computing linear relationships between behavioral indicator values and distance from archetypes, the Pearson product-moment correlation method is used\mcite{pearson1895note}. It estimates the ratio between the covariance of two variables normalized by the product of their individual variances, and as such does not provide an estimate for the slope of the covariance, only its strength and sign. This is, however, considered valid because the analysis goal is only to find evidence of the existence of relationships and not to model them.
+
+Statistical significance is tested using a permutation test for the null hypothesis that: \textit{randomly redefined coordinate pairs from the original coordinates yields greater correlation coefficients than the original data}. A significance level, $\alpha = 0.05$, is used and a Benjamin-Hochberg (BH) multiple comparisons correction is used. The BH correction is less strict than the Bonferroni correction mentioned in Section \ref{subsec:enrichment} but is widely accepted, especially by those that consider the Bonferroni correction too harsh. It sorts the $p-$values of $N$ tests such that each is denoted $p_i$ and states that in order for a test $i$ to be significant it must obey:
+
+\begin{equation}
+	p_i = \frac{\alpha}{N} i
+\end{equation}
+
+Any test $i$ which is significant, renders all preceding tests significant also.

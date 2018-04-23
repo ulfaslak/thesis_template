@@ -1,0 +1,90 @@
+\begin{lstlisting}[language=Python, label={lst:enrichments}, caption="Python code for computing enrichments near archetypes"]
+import numpy as np
+from collections import Counter
+
+def compute_a_c_bins(D, T):
+    """Compute enrichment for features T using precomputed arc.-distances, D.
+
+    Parameters
+    ----------
+    D : numpy.2darray (N, M)
+        Precomputed distances between N points and M archetypes.
+    T: pandas.DataFrame (N, K)
+        K features for N individuals matching rows in D. Each
+        feature (column) must have an associatec column label.
+
+    Output
+    ------
+    a_c_bins : json-dict
+        JSON data structure storing enrichments near each archetype for each
+        feature.
+
+        Example
+        -------
+        {'0': {
+            'age': {
+                        # 10 bin averages
+                [34.1, 33.8, 33.2, 33.4, 32.5, 32.0, 32.2, 31.0, 30.9, 30.5],
+                32.35,  # mean
+                30.5,   # minimum
+                34.1,   # maximum
+                1.204,  # SD
+                0.0231  # standard error
+            }, 
+            ...
+            'job status', {
+                [   
+                    Counter({'employed': 42, ... , 'student': 12}),
+                    ...
+                    Counter({'employed': 12, ... , 'student': 42})
+                ],  # 10 bin Counter dictionaries                               
+                set(['employed', ..., 'student'])  # set of attributes
+            }
+        }}
+    """
+    a_c_bins = {}
+    # Loop over arcs
+    for a in range(D.shape[1]):
+        Da = D[:, a]  # distances from arc
+        c_bins = {}
+        # Loop over enrichment features and build bins for each (b_bins)
+        for c in df.columns:
+            # Sort attributes into bins
+            ca = np.vstack([df[c], Da]).T
+            ca = ca[ca[:, 1].argsort()]
+            ca = ca[np.array(map(lambda v: v==v, list(ca[:, 0]))), :]
+
+            N = ca.shape[0]
+            bins = []
+
+            bin_intervals = zip(
+                np.arange(0*N, 1*N, 0.1*N),
+                np.arange(0.1*N, 1.1*N, 0.1*N)
+            )
+
+            # Continuous feature
+            if type(ca[0, 0]) is not str:
+                bins_std, bins_err = [], []
+                for p_low, p_upp in bin_intervals:
+                    bins.append(np.mean(ca[p_low:p_upp, 0]))
+                    bins_std.append(np.std(ca[p_low:p_upp, 0]))
+                    bins_err.append(
+                        np.std(ca[p_low:p_upp, 0]) / np.sqrt(len(ca[p_low:p_upp, 0]))
+                        )
+                c_bins[c] = (
+                    bins, np.mean(ca[:, 0]), np.min(ca[:, 0]),
+                    np.max(ca[:, 0]), bins_std, bins_err
+                )
+            
+            # Categorical feature
+            else:
+                attrs = set()
+                for p_low, p_upp in bin_intervals:
+                    counter = Counter(ca[p_low:p_upp, 0])
+                    bins.append(counter)
+                    attrs.update(counter.keys())
+                c_bins[c] = (bins, list(attrs))
+
+        a_c_bins[a] = c_bins
+    return a_c_bins
+\end{lstlisting}

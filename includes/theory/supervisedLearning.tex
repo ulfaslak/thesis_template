@@ -1,0 +1,19 @@
+A supervised learning approach is used in Section \ref{subsec:classification} in order to test the viability of archetypes as prediction targets and whether they may provide comparably good or better targets than individual personality traits. This section presents the most important theoretical concepts needed to explain this analysis.
+
+Supervised learning is covers a range of subproblems within the larger computational disciple known as \textit{machine learning}. The overall goal of machine learning is to build prediction models by first \textit{learning} the behavior of a system in order to later \textit{predict} it. Roughly, machine learning has two approaches for addressing problems: \textit{supervised} and \textit{unsupervised}. Supervised learning problems constitute a very rigid analytic paradigm: given a set of \textit{observations} $\matr{X} = [\matr{x}_1, \matr{x}_2, ..., \matr{x}_n] \in \mathbb{R}^{m \times n}$ which has a corresponding set of \textit{labels} $\matr{y} = [\matr{y}_1, \matr{y}_2, ..., \matr{y}_n] \in \mathbb{R}^{m \times n}$ supervised learning aims to learn the labels that typically result from different types of observations. If the observations for example were cat or dog features like "paw size", "body weight", "has whiskers", "barks", and the labels were "cat" and "dog", a supervised machine learning algorithm would learn the \textit{decision boundary} that separates the classes. In an unsupervised learning paradigm there are no "cats" and "dogs", i.e. the only data available are the observations. Yet, because cats and dogs after all distinguishable the datapoints could be separated by employing clustering methods and observing that two clusters emerge. There are many such methods that find clusters in different types of data. AA which was introduces in Section \ref{subsubsec:archetypalAnalysis} is for example considered an unsupervised learning method, because it \textit{learns} the representative corners of the data. While some tools from the unsupervised learning toolbox are used in the analysis, understanding exact details about how they work is not imperative in the current context. As such the section focuses on supervised learning.
+
+% Principle
+\subparagraph{The supervised learning paradigm}
+\input{includes/theory/crossValidation}
+
+% Principle
+\subparagraph{Cross Validation}
+\input{includes/theory/crossValidation}
+
+% Parameter Optimization
+\subparagraph{Parameter Optimization}
+\input{includes/theory/parameterOptimization}
+
+% Random Forest
+\subparagraph{Random Forest Classifier}
+\input{includes/theory/randomForestClassifier}

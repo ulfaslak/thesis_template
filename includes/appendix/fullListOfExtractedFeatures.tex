@@ -1,0 +1,65 @@
+Complete list of features extracted from the data and used in the analsis, including explanations. Features may be extracted from the sources \texttt{\small call}, \texttt{\small text}, \texttt{\small F2F}, \texttt{\small screen}, \texttt{\small stop}, either solely, or as combinations utilizing the interaction between measurements. Below, feature names are highlighted in bold, and the types used for each feature is listed in brackets: \texttt{\small []}. A bracket in a bracket signifies that the feature is computed from the combination of the datatypes listed in the bracket. A short examplary explanation is given for the first feature. Furthermore features are either computed as \textit{summary} type which yields mean and standard deviation of a distribution, or as \textit{scalar} type yielding a scalar. \textbf{Id} and \textbf{Data} are consistent with function and datatype names in project code. Asterisk '*' marks that the indicator is only a part of the extended bandicoot version, however note that most of the standard indicators have also been extended to accept new data-types.
+
+\subparagraph*{Number of contacts}
+Number of individuals interacted with. Requires more than one meeting for an individual to count. Is computed for \texttt{\small text} and \texttt{\small call} (together) and \texttt{\small stop}, resulting in two measures of \textit{number of contacts}. For \texttt{\small stop} it simply measures the number of different places an individual goes. This feature captures the size of an individuals social circle. \texttt{\small F2F} is not included because correspondent Ids are inconsistent for non-study-participant correspondents.\\ \textit{\textbf{Id}: number\_of\_contacts \textbf{Data}: [[\texttt{\footnotesize text}, \texttt{\footnotesize call}], \texttt{\footnotesize stop}] \textbf{Type}: scalar}.
+
+\subparagraph*{Number of interactions}
+Number of interaction made. \\ \textit{\textbf{Id}: number\_of\_interactions \textbf{Data}: [[\texttt{\footnotesize text}, \texttt{\footnotesize call}], \texttt{\footnotesize F2F}, \texttt{\footnotesize stop}] \textbf{Type}: scalar}.
+
+\subparagraph*{Ratio of call traffic and text traffic*}
+Number of calls made divided by number of texts sent.\\ \textit{\textbf{Id}: ratio\_call\_text \textbf{Data}: [[\texttt{\footnotesize text}, \texttt{\footnotesize call}]] \textbf{Type}: scalar}.
+
+%\subparagraph*{Interaction concentration}
+%Percent of contacts that account for 80\% of interactions. Takes basis in the 80/20 "Pareto" principle. For \texttt{\small text} and \texttt{\small call} together, this is computed over conversations.\\ \textit{\textbf{Id}: percent\_ei\_percent\_interactions \textbf{Data}: [[\texttt{\footnotesize text}, \texttt{\footnotesize call}], \texttt{\footnotesize F2F}] \textbf{Type}: scalar}.
+
+\subparagraph*{Duration concentration}
+Percent of interactions that account for 80\% of interaction duration. Takes basis in the 80/20 "Pareto" principle. \\ \textit{\textbf{Id}: percent\_ei\_percent\_durations \textbf{Data}: [\texttt{\footnotesize stop}] \textbf{Type}: scalar}.
+
+\subparagraph*{Balance of interactions}
+Percent of interactions directed outwards. \\ \textit{\textbf{Id}: balance\_of\_interactions \textbf{Data}: [\texttt{\footnotesize text}] \textbf{Type}: scalar}.
+
+\subparagraph*{Duration}
+Duration of interaction. If datatype has a \texttt{\small duration}-attribute (\texttt{\small call}, \texttt{\small screen}, \texttt{\small stop}), this is used, otherwise interactions are grouped into conversations, i.e. series of breaks no longer than one hour, and the duration of these are used to compute average duration.
+\\ \textit{\textbf{Id}: duration \textbf{Data}: [\texttt{\footnotesize call}, \texttt{\footnotesize text}, \texttt{\footnotesize F2F}, \texttt{\footnotesize screen}, \texttt{\footnotesize stop}] \textbf{Type}: scalar}.
+
+\subparagraph*{Percent initiated conversations}
+Percent conversations initiated. Conversations are inferred from series of interactions grouped by correspondent, as clusters with no more than one hour long breaks. Standard deviation across percent initiated for set of correspondents, yielding standard deviation a measure of "selectiveness" in who the individual chooses to initiate interaction with. For \texttt{\small call}, an outgoing missed \texttt{\small call} counts as an initiated conversation, whereas an incoming missed \texttt{\small call}, even though returned, does not.\\ \textit{\textbf{Id}: percent\_initiated\_conversations \textbf{Data}: [\texttt{\footnotesize text}, \texttt{\footnotesize call}] \textbf{Type}: summary}.
+
+\subparagraph*{Percent concluded conversations*}
+Similar to 'Percent initiated conversations' but for last interaction in conversation, i.e. \textit{conclusion}. Call is not used because it produces no informative feature.\\ \textit{\textbf{Id}: percent\_concluded\_conversations \textbf{Data}: [\texttt{\footnotesize text}] \textbf{Type}: summary}.
+
+\subparagraph*{Response delay}
+Response delay in conversations grouped by correspondents. Maximum delay is one hour.\\ \textit{\textbf{Id}: response\_delay \textbf{Data}: [\texttt{\footnotesize call}, \texttt{\footnotesize text}] \textbf{Type}: summary}.
+
+\subparagraph*{Response rate}
+Response rate to conversations initiated by correspondents, grouped by correspondent. Response counts if returned within the first hour, otherwise it counts as a delay.\\ \textit{\textbf{Id}: response\_rate \textbf{Data}: [[\texttt{\footnotesize call}, \texttt{\footnotesize text}]] \textbf{Type}: summary}.
+
+\subparagraph*{Overlap of social meetings*}
+Proportional to average number of people together with when social. Computed from overlap of conversations. Captures propensity to go in groups.\\ \textit{\textbf{Id}: overlap\_conversations \textbf{Data}: [\texttt{\footnotesize F2F}] \textbf{Type}: scalar}.
+
+\subparagraph*{Percent nocturnal}
+Percent of activity that occurs between 22pm and 6am.\\ \textit{\textbf{Id}: percent\_nocturnal \textbf{Data}: [\texttt{\footnotesize F2F}, \texttt{\footnotesize screen}, \texttt{\footnotesize stop}] \textbf{Type}: scalar}.
+
+\subparagraph*{Interevent time}
+Average time between events. For screen this captures the average time between phone usage sessions.\\ \textit{\textbf{Id}: ratio \textbf{Data}: [\texttt{\footnotesize screen}] \textbf{Type}: scalar}.
+
+\subparagraph*{Phone use while social*}
+Amount of phone use while social divided by amount of phone use while alone.\\ \textit{\textbf{Id}: ratio\_social\_screen\_alone\_screen \textbf{Data}: [[\texttt{\footnotesize screen}, \texttt{\footnotesize F2F}]] \textbf{Type}: scalar}.
+
+\subparagraph*{Ratio of interactions at campus vs. elsewhere*}
+No. interactions that occur within campus regions divided by no. interactions that occur outside of campus and inferred home regions.\\ \textit{\textbf{Id}: ratio\_interactions\_campus\_other \textbf{Data}: [[\texttt{\footnotesize stop}, \texttt{\footnotesize F2F}]] \textbf{Type}: scalar}.
+
+\subparagraph*{Percent interactions elsewhere with people from campus*}
+Percent of all interactions that occur outside campus, dorms and inferred home regions, which are made with individuals that were also interacted with at campus. Captures level of non-curricular social engagement with school mates. Excludes home because a large group of study participants live at campus dorms, and would exhibit far greater values in this feature for reasons not necessarily related to social engagement.\\ \textit{\textbf{Id}: percent\_outside\_campus\_from\_campus \textbf{Data}: [[\texttt{\footnotesize stop}, \texttt{\footnotesize F2F}]] \textbf{Type}: scalar}.
+
+\subparagraph*{Percent daily time at campus*}
+Average percent of all daily time (24 h) spent at campus.\\ \textit{\textbf{Id}: percent\_at\_campus \textbf{Data}: [\texttt{\footnotesize stop}] \textbf{Type}: scalar}.
+
+\subparagraph*{Daily average number of stranger interactions*}
+Percentage of \texttt{\small F2F} conversations, i.e. connections grouped into series of less than 24 hour breaks, that occur only once. Captures an individuals propensity to engage in social activities with people outside of their social circle, such as talking with people in bars, or joining a group of mixed friends for a weekend in a summer house. May include some noise from non-social connections made in transportation and other public spaces.\\ \textit{\textbf{Id}: number\_of\_contacts\_less \textbf{Data}: [\texttt{\footnotesize F2F}] \textbf{Type}: scalar}.
+
+\subparagraph*{First seen response rate*}
+Percent of texts that are responded to during first possible session, i.e. right away when observed by the individual.\\ \textit{\textbf{Id}: first\_seen\_response\_rate \textbf{Data}: [[\texttt{\footnotesize screen}, \texttt{\footnotesize text}]] \textbf{Type}: scalar}.
+
+\subparagraph*{Interaction autocorrelation*}
+Average autocorrelation of \texttt{\small F2F} togetherness across an individuals dyadic relationships. Captures a facet of the kind of relationships an individual maintains, where a high value means that most relationships fit into a schedule and are non-spontaneous and low values means most meetings are improptu. Only includes dyads that are observed in conversation more than 5 times.\\ \textit{\textbf{Id}: interaction\_autocorrelation \textbf{Data}: [\texttt{\footnotesize F2F}] \textbf{Type}: scalar}.
